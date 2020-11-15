@@ -46,6 +46,7 @@ module.exports = {
         path: `${__dirname}/src/pages/posts`,
       },
     },
+    `gatsby-plugin-playground`,
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

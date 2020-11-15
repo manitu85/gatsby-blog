@@ -23,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
 
   body {
     color: ${({ theme }) => theme.colors.mainWhite};
-    letter-spacing: 10px;
+    letter-spacing: 2px;
     font-size: .9rem;
     /* font-family: monospace; */
     background-color: ${({ theme }) => theme.colors.text} ;

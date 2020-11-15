@@ -1,6 +1,8 @@
 import React from 'React'
 import { graphql, useStaticQuery } from 'gatsby'
-import Layout from '../components/layout/layout'
+import Layout from 'components/layout/layout'
+import styled from 'styled-components';
+import { typography, color, space } from 'styled-system'
 
 const Blog = () => {
 
@@ -9,17 +11,17 @@ const Blog = () => {
   console.log('posts :>> ', posts);
   return (
     <Layout>
-      <h1 style={{ marginBottom: '2.5rem' }}>GATSBY TRASH BLOG</h1>
-      <h3 style={{ marginBottom: '2rem' }}>{data.allMarkdownRemark.totalCount} Posts</h3>
+      <Text as='h1' mb={16} color='accent' fontSize={36} >GATSBY TRASH BLOG</Text>
+      <Text as='h3' h3 mb={16}>{data.allMarkdownRemark.totalCount} Posts</Text>
       {
         posts.map(({ node: post }) => {
           return (
             <div
               style={{ marginBottom: '2rem' }}
               key={post.id} >
-              <h2 style={{ textTransform: 'uppercase' }} >{post.frontmatter.title}{' '}
-                <span style={{ color: '#f15025' }} >{post.frontmatter.date}</span>
-              </h2>
+              <Text as='h2' >{post.frontmatter.title}{' '}
+                <span style={{ color: '#25f15f' }} >{post.frontmatter.date}</span>
+              </Text>
               <p>{post.excerpt}</p>
             </div>
           )
@@ -49,3 +51,10 @@ const GET_MARKDOWN_POSTS = graphql`
     }
   }
 `
+
+const Text = styled.div`
+  ${typography}
+  ${color}
+  ${space}
+`;
+
