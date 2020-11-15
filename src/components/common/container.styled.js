@@ -8,10 +8,10 @@ export const Container = styled.div`
 
   /* background-color: ${({ theme }) => theme.colors.mainGreyDark}; */
 
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  text-align: left;
+  text-align: left; */
 
   /* height: 100vh; */
 `
