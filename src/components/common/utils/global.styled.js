@@ -3,6 +3,10 @@ import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
 
+  root: {
+    --main-black: #202020;
+  }
+
   *,
   *:before,
   *:after {
@@ -22,7 +26,7 @@ const GlobalStyles = createGlobalStyle`
     letter-spacing: 10px;
     font-size: .9rem;
     /* font-family: monospace; */
-    background-color: ${({ theme }) => theme.colors.mainBlack} !important;
+    background-color: ${({ theme }) => theme.colors.text} ;
   }
 
 `

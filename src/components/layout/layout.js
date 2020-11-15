@@ -6,8 +6,9 @@ import Header from './header'
 import Footer from './footer'
 
 import { ThemeProvider } from 'styled-components'
-import GlobalStyles from 'common/global.styled'
+import GlobalStyles from 'common/utils/global.styled'
 import theme from 'theme/theme'
+import { Container } from 'common/container.styled'
 
 
 const Layout = ({ children }) => {
@@ -16,12 +17,14 @@ const Layout = ({ children }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Header title={data.site.siteMetadata.title || `Title`} />
       <GlobalStyles />
-      <main>
-        {children}
-      </main>
-      <Footer />
+      <Header style={{ color: '#fff' }} siteTitle={`Trash Blog`} />
+      <Container>
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </Container>
     </ThemeProvider>
   )
 }

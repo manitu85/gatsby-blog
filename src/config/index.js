@@ -2,7 +2,7 @@
 module.exports = {
   siteTitle: 'custom landing starter', // <title>
   siteDescription: 'custom landing starter for gatsby with plugins and animation',
-  siteAuthor: '@digital_genetics, @alex_burke',
+  siteAuthor: '@digital_genetics',
   siteKeywords: ['gatsby', 'site', 'app'],
   siteUrl: 'https://something.netlify.app/',
   siteImage: 'src/assets/images/gatsby-astronaut.png',
