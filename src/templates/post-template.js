@@ -9,7 +9,7 @@ import { Box } from 'common/box.styled'
 const PostTemplate = ({ data: post }) => {
   return (
     <Layout>
-      <Text variant='h1' mb={16} fontSize={24} >
+      <Text as='h1' mb={16} fontSize={24} >
         {post.markdownRemark.frontmatter.title}
       </Text>
       <Box

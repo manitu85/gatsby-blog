@@ -17,6 +17,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 }
 
 const postTemplate = path.resolve('./src/templates/post-template.js')
+const blogTemplate = path.resolve('./src/templates/blog-template.js')
 
 // create pages with post slug
 // Implement the Gatsby API “createPages”. This is called once the
@@ -56,4 +57,29 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
     })
   })
+
+  posts.forEach((_, idx, postsArr) => {
+    const totalPages = postsArr.length
+    const postsPerPage = 1
+    const currentPage = idx + 1
+    const isFirstPage = idx === 0
+    const isLastPage = currentPage === totalPages
+
+    createPage({
+      path: isLastPage ? `/blog/` : `/blog/${currentPage}`,
+      component: blogTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: idx * postsPerPage,
+        currentPage,
+        isFirstPage,
+        isLastPage,
+        totalPages
+      }
+    })
+
+
+
+  });
+
 }
