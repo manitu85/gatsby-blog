@@ -1,9 +1,5 @@
 const theme = {
-  breakpoints: {
-    mobile: '576px',
-    tablet: '768px',
-    desktop: '996px',
-  },
+  breakpoints: ['40em', '52em', '64em'],
   colors: {
     text: '#101010',
     background: '#fff',
@@ -47,6 +43,11 @@ const theme = {
   lineHeights: {
     body: 1.5,
     heading: 1.25
+  },
+  letterSpacings: {
+    normal: 'normal',
+    caps: '0.25em',
+    labels: '0.05em',
   },
   textStyles: {
     heading: {

@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <Header style={{ color: '#fff' }} siteTitle={`Trash Blog`} />
+      <Header color='#fff' siteTitle={data.site.siteMetadata.title} />
       <Box
         maxWidth='1140px'
         width='100%'

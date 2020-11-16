@@ -27,7 +27,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const res = await graphql( // apprentices with graphql here !!!
     `
       {
-        allMarkdownRemark {
+        allMarkdownRemark(limit: 1000) {
           edges {
             node {
               fields {
@@ -58,9 +58,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  posts.forEach((_, idx, postsArr) => {
-    const totalPages = postsArr.length
-    const postsPerPage = 1
+  const postsPerPage = 2
+  const totalPages = Math.ceil(posts.length / postsPerPage)
+
+  Array.from({ length: totalPages }).forEach((_, idx,) => {
     const currentPage = idx + 1
     const isFirstPage = idx === 0
     const isLastPage = currentPage === totalPages
@@ -77,8 +78,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         totalPages
       }
     })
-
-
 
   });
 

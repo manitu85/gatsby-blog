@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+// import propTypes from '@styled-system/prop-types'
 import {
   space,
   typography,
@@ -8,7 +9,6 @@ import {
   fontWeight,
   lineHeight,
 } from 'styled-system'
-import propTypes from '@styled-system/prop-types'
 
 
 const Text = styled.div`

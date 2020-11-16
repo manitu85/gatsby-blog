@@ -1,6 +1,6 @@
 
 module.exports = {
-  siteTitle: 'custom landing starter', // <title>
+  siteTitle: 'Astrology Blog', // <title>
   siteDescription: 'custom landing starter for gatsby with plugins and animation',
   siteAuthor: '@digital_genetics',
   siteKeywords: ['gatsby', 'site', 'app'],
