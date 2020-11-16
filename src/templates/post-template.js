@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 
 import Layout from 'components/layout/layout'
-import { Text } from 'common/text.styled'
-import { Box } from 'common/box.styled'
+import { Text } from 'common/typography'
+import { Box } from 'common/layout'
 
 
 const PostTemplate = ({ data: post }) => {

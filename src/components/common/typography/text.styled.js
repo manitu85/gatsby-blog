@@ -8,45 +8,30 @@ import {
   fontWeight,
   lineHeight,
 } from 'styled-system'
+import propTypes from '@styled-system/prop-types'
 
 
 const Text = styled.div`
   ${space}
+  ${width}
+  ${color}
   ${typography}
   ${fontSize}
   ${fontWeight}
   ${lineHeight}
-  ${color}
 `
 
 Text.propTypes = {
   ...space.propTypes,
+  ...width.propTypes,
   ...fontSize.propTypes,
   ...fontWeight.propTypes,
   ...lineHeight.propTypes,
   ...color.propTypes,
 }
 
-const Heading = Text.withComponent('h1')
 
-const SubHeading = Text.withComponent('h2')
+export default Text
 
-SubHeading.defaultProps = {
-  fontSize: 3,
-  lineHeight: 1.25,
-  m: 0,
-}
-
-Heading.defaultProps = {
-  fontSize: 5,
-  lineHeight: 1.5,
-  m: 0,
-}
-
-export {
-  Text,
-  Heading,
-  SubHeading
-}
 
 // [https://github.com/johnpolacek/styled-system-html/]

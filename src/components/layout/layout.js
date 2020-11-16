@@ -8,7 +8,7 @@ import Footer from './footer'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyles from 'common/utils/global.styled'
 import theme from 'theme/theme'
-import { Container } from 'common/container.styled'
+import { Box } from 'common/layout'
 
 
 const Layout = ({ children }) => {
@@ -19,12 +19,17 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Header style={{ color: '#fff' }} siteTitle={`Trash Blog`} />
-      <Container>
+      <Box
+        maxWidth='1140px'
+        width='100%'
+        m='0 auto'
+        p='0 2rem'
+      >
         <main>
           {children}
         </main>
         <Footer />
-      </Container>
+      </Box>
     </ThemeProvider>
   )
 }

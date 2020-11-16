@@ -2,8 +2,8 @@
 import React from 'React'
 import { graphql, Link } from 'gatsby'
 import Layout from 'components/layout/layout'
-import { Text } from 'common/text.styled'
-import { Box } from 'common/box.styled'
+import { Text, Heading, SubHeading } from 'common/typography'
+import { Box, Flex } from 'common/layout'
 
 const Blog = ({ data, pageContext }) => {
   // console.log('Data :>> ', data);
@@ -16,8 +16,8 @@ const Blog = ({ data, pageContext }) => {
   // console.log('posts :>> ', posts);
   return (
     <Layout>
-      <Text as='h1' mb={16} color='accent' fontSize={36} >GATSBY TRASH BLOG</Text>
-      <Text as='h2' mb={16}>{data.allMarkdownRemark.totalCount} Posts</Text>
+      <Heading mb='1rem' color='accent' fontSize={36} >GATSBY TRASH BLOG</Heading>
+      <SubHeading mb='1rem' >{data.allMarkdownRemark.totalCount} Posts</SubHeading>
       {
         posts.map(({ node: post }) => {
           return (
@@ -36,7 +36,10 @@ const Blog = ({ data, pageContext }) => {
         })
       }
       {/* Pagination links */}
-      <div>
+      <Flex
+        maxWidth='200px'
+        justifyContent='space-between'
+      >
         {
           !isFirstPage && (
             <Link to={prevPage} rel='prev'>Prev Page</Link>
@@ -47,7 +50,7 @@ const Blog = ({ data, pageContext }) => {
             <Link to={nextPage} rel='next'>Next Page</Link>
           )
         }
-      </div>
+      </Flex>
     </Layout>
   )
 }
