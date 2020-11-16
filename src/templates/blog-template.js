@@ -41,7 +41,7 @@ const Blog = ({ data, pageContext }) => {
           !isFirstPage && (
             <Link to={prevPage} rel='prev'>Prev Page</Link>
           )
-        }
+        }{' '}
         {
           !isLastPage && (
             <Link to={nextPage} rel='next'>Next Page</Link>
