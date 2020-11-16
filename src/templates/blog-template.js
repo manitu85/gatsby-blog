@@ -1,9 +1,11 @@
 
 import React from 'React'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
+
 import Layout from 'components/layout/layout'
 import { Text, Heading, SubHeading } from 'common/typography'
 import { Box, Flex } from 'common/layout'
+import { Link } from 'common/links'
 
 const Blog = ({ data, pageContext }) => {
   // console.log('Data :>> ', data);
@@ -30,7 +32,7 @@ const Blog = ({ data, pageContext }) => {
                   <span style={{ color: '#25f15f' }} >{post.frontmatter.date}</span>
                 </Text>
               </Link>
-              <p>{post.excerpt}</p>
+              <Text as='p' mt='4px' >{post.excerpt}</Text>
             </Box>
           )
         })

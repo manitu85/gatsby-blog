@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import Text from './text.styled'
 
 const Heading = Text.withComponent('h1')

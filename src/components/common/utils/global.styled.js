@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
+import { themeGet } from '@styled-system/theme-get'
+
 
 
 const GlobalStyles = createGlobalStyle`
@@ -27,6 +29,15 @@ const GlobalStyles = createGlobalStyle`
     font-size: .9rem;
     /* font-family: monospace; */
     background-color: ${({ theme }) => theme.colors.text} ;
+  }
+
+  a {
+    text-decoration: none;
+    color: #fff;
+
+    &:hover {
+      color: ${themeGet('colors.accent', '#fff')}
+    }
   }
 
 `
