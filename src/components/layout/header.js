@@ -1,35 +1,36 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import PropTypes from "prop-types"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 1140,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+import { useStaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+
+import { Box, Flex } from "common/layout"
+import { Text, Heading } from "common/typography"
+import { Link } from "common/links"
+
+const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(LOGO)
+  return (
+    <header style={{ background: `black`, marginBottom: `1.45rem` }} >
+      <Flex
+        maxWidth='1140px'
+        height='100px'
+        m='0 auto'
+        p='1rem'
+        alignItems='center'
+      >
+        <Link to="/" >
+          <Img fixed={data.file.childImageSharp.fixed} />
         </Link>
-      </h1>
-    </div>
-  </header>
-)
+        <Heading m='0' fontWeight='600' >
+          {siteTitle.toUpperCase()}
+        </Heading>
+      </Flex>
+    </header>
+  )
+}
+
+
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -40,3 +41,15 @@ Header.defaultProps = {
 }
 
 export default Header
+
+const LOGO = graphql`
+  {
+    file(relativePath: {eq: "astro.png" }) {
+      childImageSharp{
+        fixed(width: 96, height: 96) {
+          ...GatsbyImageSharpFixed_withWebp
+        }
+      }
+    }
+  }
+`

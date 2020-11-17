@@ -5,15 +5,15 @@ date: "2020-01-20"
 
 # Znacenje brojeva u numerologiji
 
-`
+![Numerolgy wheel](numerolgy.jpg)
 
 ## NULA
 
-`Ovo je savršen simbol, bez početka i kraja. On simbolizuje Boga i ideale. Na primer, broj 70 može da simbolizuje Duhovne ideale.`
+Ovo je savršen simbol, bez početka i kraja. On simbolizuje Boga i ideale. Na primer,broj 70 može da simbolizuje Duhovne ideale.`
 
 ## BROJ JEDAN
 
-`Broj 1 je "muški broj" i simbolizuje muški princip. On pokazuje zahtev za razvijanje individualnosti i kreativnosti, ili ukazuje na sebičnost onog koji sanja u odnosu na predmet sna.`
+Broj 1 je "muški broj" i simbolizuje muški princip. On pokazuje zahtev za razvijanje individualnosti i kreativnosti, ili ukazuje na sebičnost onog koji sanja u odnosu na predmet sna.`
 
 ## BROJ DVA
 
