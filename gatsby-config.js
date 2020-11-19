@@ -79,6 +79,12 @@ module.exports = {
     //   },
     // },
     //PWA Configuration 
+    // {
+    //   resolve: `gatsby-plugin-typography`,
+    //   options: {
+    //     pathToConfigModule: `src/components/common/utils/typography.js`
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

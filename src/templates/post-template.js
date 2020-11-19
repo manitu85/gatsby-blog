@@ -12,8 +12,9 @@ const PostTemplate = ({ data: post }) => {
       <Text as='h1' mb={2} fontSize={4} >
         {post.markdownRemark.frontmatter.title}
       </Text>
-      <Text as='h4' mb={2} fontSize={3} >{post.markdownRemark.timeToRead}
-        {' '}{post.markdownRemark.timeToRead > 1 ? 'minutes' : 'minute'}
+      <Text as='h4' mb={2} fontSize={3} >
+        {post.markdownRemark.timeToRead}{' '}
+        {post.markdownRemark.timeToRead > 1 ? 'minutes' : 'minute'}
       </Text>
       <Box
         dangerouslySetInnerHTML={{ __html: post.markdownRemark.html }}

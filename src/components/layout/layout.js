@@ -6,7 +6,7 @@ import Header from './header'
 import Footer from './footer'
 
 import { ThemeProvider } from 'styled-components'
-import GlobalStyles from 'common/utils/global.styled'
+import GlobalStyles from 'common/utils/global'
 import theme from 'theme/theme'
 import { Box } from 'common/layout'
 
@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <Header color='#fff' siteTitle={data.site.siteMetadata.title} />
       <Box
-        maxWidth='1140px'
+        maxWidth='996px'
         width='100%'
         m='0 auto'
         p='0 2rem'

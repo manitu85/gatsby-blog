@@ -23,19 +23,20 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    color: ${({ theme }) => theme.colors.mainWhite};
-    letter-spacing: 2px;
     font-size: .9rem;
+    color: ${({ theme }) => theme.colors.text};
+    background-color: ${({ theme }) => theme.colors.mainWhite} ;
+    /* letter-spacing: 2px; */
     /* font-family: monospace; */
-    background-color: ${({ theme }) => theme.colors.text} ;
   }
 
   a {
     text-decoration: none;
-    color: #fff;
+    color: ${({ theme }) => theme.colors.highlight};
 
     &:hover {
-      color: ${themeGet('colors.accent', '#fff')}
+      color: ${themeGet('colors.accent', '#fff')};
+      /* text-decoration: underline; */
     }
   }
 

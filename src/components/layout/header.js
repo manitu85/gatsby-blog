@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
-import { Box, Flex } from "common/layout"
+import { Flex } from "common/layout"
 import { Text, Heading } from "common/typography"
 import { Link } from "common/links"
 
@@ -23,7 +23,9 @@ const Header = ({ siteTitle }) => {
           <Img fixed={data.file.childImageSharp.fixed} />
         </Link>
         <Heading m='0' fontWeight='600' >
-          {siteTitle.toUpperCase()}
+          <Text color='white'>
+            {siteTitle.toUpperCase()}
+          </Text>
         </Heading>
       </Flex>
     </header>
