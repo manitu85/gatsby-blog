@@ -1,6 +1,6 @@
 ---
-title: "Numerologija"
-date: "2020-01-20"
+title: 'Numerologija'
+date: '2020-01-20'
 ---
 
 # Znacenje brojeva u numerologiji
