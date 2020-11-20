@@ -1,16 +1,22 @@
 import React from "react"
+import { graphql, useStaticQuery } from 'gatsby'
+import Img from "gatsby-image"
+
 import styled from 'styled-components'
 
 import useSiteMetadata from 'hooks/useSiteMetaData'
 import Layout from "components/layout/layout"
 import SEO from "components/seo/seo"
+// import { GET_SINGLE_IMAGE } from 'graphql/getSingleImage'
 
-import { Text } from 'common/typography'
+import { Text, Heading } from 'common/typography'
 import avatar from 'assets/images/gravatar.jpg'
-// import { Flex } from 'common/layout'
+import { Box, Flex } from 'common/layout'
 
 
 const BlogIndex = () => {
+  const data = useStaticQuery(GET_SINGLE_IMAGE)
+
   const {
     description,
     author,
@@ -18,16 +24,34 @@ const BlogIndex = () => {
   return (
     <Layout>
       <SEO title='Home' />
+      <Box m='0 auto' maxWidth='750px' >
+        <Img fluid={data.img1.childImageSharp.fluid} />
+      </Box>
       <User
         username={author}
         excerpt={description}
       />
+      <Heading>My Blog Posts</Heading>
+
     </Layout>
   )
 }
 
 
 export default BlogIndex
+
+
+export const GET_SINGLE_IMAGE = graphql`
+{
+  img1: file(relativePath: { eq: "meaning.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 750) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
 
 const User = ({ username, excerpt }) => (
   <UserWrapper>

@@ -12,7 +12,7 @@ import { Text, Heading } from "common/typography"
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(LOGO)
   return (
-    <header style={{ background: `black`, marginBottom: `1.45rem` }} >
+    <header style={{ marginBottom: `1.45rem` }} >
       <Flex
         maxWidth='768px'
         width='100%'
@@ -31,7 +31,7 @@ const Header = ({ siteTitle }) => {
           </Heading> */}
         </Flex>
         <Menu>
-          <Items to="/">Blog</Items>
+          <Items to="/">Posts</Items>
           <Items to="/about">About</Items>
           <Items to="/contact">Contact</Items>
         </Menu>
@@ -44,14 +44,15 @@ const Menu = styled.nav`
 `;
 
 const Items = styled(Link)`
-  color: ${({ theme }) => theme.colors.primaryLight};
+  color: ${({ theme }) => theme.colors.text};
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
+  letter-spacing: 1px;
   height: 100%;
   margin-left: 1rem;
-  transition: all .3s ease-in-out;
-  /* background: ${({ theme }) => theme.colors.secondary}; */
+  transition: all .2s ease;
+  background: ${({ theme }) => theme.colors.background};
 
   &:hover {
     color: ${({ theme }) => theme.colors.accent};

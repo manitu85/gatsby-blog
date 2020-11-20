@@ -1,8 +1,8 @@
 
 module.exports = {
   siteTitle: 'Astro Zenit', // <title>
-  siteDescription: 'custom landing starter for gatsby with plugins and animation',
-  siteAuthor: '@Alejandra Burke',
+  siteDescription: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas minus quisquam autem consequatur? Perspiciatis neque mollitia eligendi molestiae ab doloremque.',
+  siteAuthor: 'Alejandra Burke',
   siteKeywords: ['gatsby', 'site', 'app'],
   siteUrl: 'https://something.netlify.app/',
   siteImage: 'src/assets/images/gatsby-astronaut.png',
