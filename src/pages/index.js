@@ -17,7 +17,7 @@ const BlogIndex = () => {
   } = useSiteMetadata()
   return (
     <Layout>
-      <SEO title='home' />
+      <SEO title='Home' />
       <User
         username={author}
         excerpt={description}

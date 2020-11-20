@@ -5,7 +5,7 @@ import Layout from "components/layout/layout"
 
 const Posts = () => {
   return (
-    <Layout>
+    <Layout title='about' >
       <h1>about</h1>
       <Link to="/">Link to Home</Link>
     </Layout>

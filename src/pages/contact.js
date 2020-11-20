@@ -5,7 +5,7 @@ import Layout from "components/layout/layout"
 
 const Contact = () => {
   return (
-    <Layout>
+    <Layout title='contact'>
       <h1>contact</h1>
       <Link to="/">Link to Home</Link>
     </Layout>
