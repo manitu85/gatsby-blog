@@ -1,25 +1,31 @@
 import React from "react"
 import styled from 'styled-components'
 
+import useSiteMetadata from 'hooks/useSiteMetaData'
 import Layout from "components/layout/layout"
-import Image from "components/image/image"
 import SEO from "components/seo/seo"
 
 import { Text } from 'common/typography'
-// import { Flex } from 'common/layout'
 import avatar from 'assets/images/gravatar.jpg'
+// import { Flex } from 'common/layout'
 
 
+const BlogIndex = () => {
+  const {
+    description,
+    author,
+  } = useSiteMetadata()
+  return (
+    <Layout>
+      <SEO title='home' />
+      <User
+        username={author}
+        excerpt={description}
+      />
+    </Layout>
+  )
+}
 
-const BlogIndex = () => (
-  <Layout>
-    <SEO title="Home" />
-    <User
-      username='Alejandra Burke'
-      excerpt='lorem20 dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing onsectetur adipiscing elit dolor si'
-    />
-  </Layout>
-)
 
 export default BlogIndex
 

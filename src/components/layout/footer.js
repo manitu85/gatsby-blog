@@ -1,10 +1,9 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
+import useSiteMetadata from 'hooks/useSiteMetaData'
 
 const Footer = () => {
 
-  const data = useStaticQuery(AUTHOR)
-  const { author } = data.site.siteMetadata
+  const { author } = useSiteMetadata()
 
   return (
     <footer style={{ marginTop: `2rem`, textAlign: 'textLeft' }}>
@@ -16,12 +15,3 @@ const Footer = () => {
 
 export default Footer
 
-const AUTHOR = graphql`
-  query {
-    site {
-      siteMetadata {
-        author
-      }
-    }
-  }
-`

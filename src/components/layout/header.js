@@ -26,9 +26,9 @@ const Header = ({ siteTitle }) => {
           <Link to="/" >
             <Img fixed={data.file.childImageSharp.fixed} />
           </Link>
-          <Heading m='0' fontWeight='600' color='white'>
+          {/* <Heading m='0' fontWeight='600' color='white'>
             {siteTitle.toUpperCase()}
-          </Heading>
+          </Heading> */}
         </Flex>
         <Menu>
           <Items to="/">Blog</Items>
