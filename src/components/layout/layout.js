@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
       <GlobalStyles />
       <Header color='#fff' siteTitle={data.site.siteMetadata.title} />
       <Box
-        maxWidth='996px'
+        maxWidth='768px'
         width='100%'
         m='0 auto'
         p='0 2rem'

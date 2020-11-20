@@ -4,35 +4,60 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
+import styled from 'styled-components'
 import { Flex } from "common/layout"
-import { Text, Heading } from "common/typography"
 import { Link } from "common/links"
+import { Text, Heading } from "common/typography"
 
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(LOGO)
   return (
     <header style={{ background: `black`, marginBottom: `1.45rem` }} >
       <Flex
-        maxWidth='1140px'
+        maxWidth='768px'
+        width='100%'
         height='100px'
         m='0 auto'
         p='1rem'
         alignItems='center'
+        justifyContent='space-between'
       >
-        <Link to="/" >
-          <Img fixed={data.file.childImageSharp.fixed} />
-        </Link>
-        <Heading m='0' fontWeight='600' >
-          <Text color='white'>
+        <Flex alignItems='center' >
+          <Link to="/" >
+            <Img fixed={data.file.childImageSharp.fixed} />
+          </Link>
+          <Heading m='0' fontWeight='600' color='white'>
             {siteTitle.toUpperCase()}
-          </Text>
-        </Heading>
+          </Heading>
+        </Flex>
+        <Menu>
+          <Items to="/">Blog</Items>
+          <Items to="/about">About</Items>
+          <Items to="/contact">Contact</Items>
+        </Menu>
       </Flex>
-    </header>
+    </header >
   )
 }
 
+const Menu = styled.nav`
+`;
 
+const Items = styled(Link)`
+  color: ${({ theme }) => theme.colors.primaryLight};
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  height: 100%;
+  margin-left: 1rem;
+  transition: all .3s ease-in-out;
+  /* background: ${({ theme }) => theme.colors.secondary}; */
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.accent};
+
+  }
+`
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

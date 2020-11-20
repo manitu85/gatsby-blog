@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.highlight};
+    color: ${({ theme }) => theme.colors.accent};
 
     &:hover {
       color: ${themeGet('colors.accent', '#fff')};

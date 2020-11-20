@@ -1,20 +1,67 @@
 import React from "react"
-// import { Link } from "gatsby"
+import styled from 'styled-components'
 
 import Layout from "components/layout/layout"
 import Image from "components/image/image"
 import SEO from "components/seo/seo"
 
+import { Text } from 'common/typography'
+// import { Flex } from 'common/layout'
+import avatar from 'assets/images/gravatar.jpg'
+
+
+
 const BlogIndex = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    <User
+      username='Alejandra Burke'
+      excerpt='lorem20 dolor sit amet, consectetur adipiscing elit dolor sit amet, consectetur adipiscing onsectetur adipiscing elit dolor si'
+    />
   </Layout>
 )
 
 export default BlogIndex
+
+const User = ({ username, excerpt }) => (
+  <UserWrapper>
+    <Avatar />
+    <Description>
+      <Text as='p'>Hi people</Text>
+      <Username>{username}</Username>
+      <Excerpt>{excerpt}</Excerpt>
+    </Description>
+  </UserWrapper>
+)
+
+
+const UserWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 auto 12px 12px;
+`;
+
+const Avatar = styled.img.attrs({
+  src: avatar,
+  alt: 'avatar'
+})`
+  flex: 0 0 150px;
+  width: 150px;
+  margin: 0;
+  border-radius: 50%;
+`;
+
+const Description = styled.div`
+  flex: 1;
+  padding: 12px;
+`;
+
+const Username = styled.div`
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 1.25rem;
+`
+
+const Excerpt = styled.p`
+  margin: 0;
+`

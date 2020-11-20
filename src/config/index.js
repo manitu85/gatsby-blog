@@ -1,6 +1,6 @@
 
 module.exports = {
-  siteTitle: 'Astro Blog', // <title>
+  siteTitle: 'Zenit', // <title>
   siteDescription: 'custom landing starter for gatsby with plugins and animation',
   siteAuthor: '@digital_genetics',
   siteKeywords: ['gatsby', 'site', 'app'],
