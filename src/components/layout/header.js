@@ -21,6 +21,7 @@ const Header = ({ siteTitle }) => {
         p='1rem'
         alignItems='center'
         justifyContent='space-between'
+        templates
       >
         <Flex alignItems='center' >
           <Link to="/" >

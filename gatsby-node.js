@@ -1,10 +1,25 @@
 const path = require("path")
 const { createFilePath } = require('gatsby-source-filesystem')
 
-// Create slugs for posts
-exports.onCreateNode = ({ node, getNode, actions }) => {
+// exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
 
-  const { createNodeField } = actions
+//   // const { createNodeField } = actions
+
+//   if (node.type === 'MarkdownRemark') {
+//     const slug = createFilePath({ node, getNode, basePath: 'pages' })
+//     createNodeField({
+//       node,
+//       name: 'slug',
+//       value: slug
+//     })
+//   }
+// }
+
+
+// Create slugs for posts
+exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
+
+  // const { createNodeField } = actions
 
   if (node.internal.type === 'MarkdownRemark') {
     const slug = createFilePath({ node, getNode, basePath: 'posts' })
@@ -21,8 +36,8 @@ const blogTemplate = path.resolve('./src/templates/blog-template.js')
 
 // create pages with post slug
 // Implement the Gatsby API “createPages”. This is called once the
-exports.createPages = async ({ graphql, actions, reporter }) => {
-  const { createPage } = actions
+exports.createPages = async ({ graphql, reporter, actions: { createPage } }) => {
+  // const { createPage } = actions
   // Query for markdown nodes to use in creating pages.
   const res = await graphql( // apprentices with graphql here !!!
     `

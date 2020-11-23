@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { string, node } from 'prop-types'
 
 const OutboundLink = ({ to, from, target, children, className }) => (
   <a
@@ -13,11 +13,11 @@ const OutboundLink = ({ to, from, target, children, className }) => (
 )
 
 OutboundLink.propTypes = {
-  to: PropTypes.string.isRequired,
-  from: PropTypes.string.isRequired,
-  target: PropTypes.string,
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string,
+  to: string.isRequired,
+  from: string.isRequired,
+  target: string,
+  children: node.isRequired,
+  className: string,
 }
 
 OutboundLink.defaultProps = {
