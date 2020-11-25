@@ -20,6 +20,7 @@ const useSiteMetadata = () => {
 
 export default useSiteMetadata
 
+// destructure data
 // const {
 //   title,
 //   description,
