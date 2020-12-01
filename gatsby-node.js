@@ -19,6 +19,7 @@ exports.onCreateNode = ({ node, getNode, actions: { createNodeField } }) => {
 
 const postTemplate = path.resolve('./src/templates/post-template.js')
 const blogTemplate = path.resolve('./src/templates/blog-template.js')
+const blogPost = path.resolve('./src/templates/blog-post.js')
 
 // create pages with post slug
 // Implement the Gatsby API “createPages”. This is called once the
@@ -46,8 +47,21 @@ exports.createPages = async ({ graphql, reporter, actions: { createPage } }) => 
     return
   }
 
+  // console.log('RESULT :>> ', res);
+
   // Pragmatically create pages
   const posts = res.data.allMarkdownRemark.edges
+
+  posts.forEach(({ node: post }) => {
+    createPage({
+      path: post.fields.slug,
+      component: blogPost,
+      context: {
+        slug: post.fields.slug
+      }
+    })
+  })
+
 
   posts.forEach(({ node: post }) => {
     createPage({
